@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. [NAME] — Psychiatrist</title>
+<title>Dr. Shafeeq Ahammed — Psychiatrist</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,680 +21,222 @@
   --text: #1e2a25;
   --text-muted: #5a6b63;
   --white: #ffffff;
-  --lavender: #8b7fb8;
 }
 
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Nunito', sans-serif;
-  background: var(--warm);
-  color: var(--text);
-  line-height: 1.6;
-}
+body { font-family: 'Nunito', sans-serif; background: var(--warm); color: var(--text); line-height: 1.6; }
 
-/* ===== BLINKING PLACEHOLDER STYLE ===== */
 .ph {
-  background: #fff3cd;
-  border: 2px dashed #f0a500;
-  border-radius: 4px;
-  padding: 0 6px;
-  color: #7a4f00;
-  font-weight: 600;
-  font-style: normal;
-  display: inline-block;
-  animation: phBlink 1.4s ease-in-out infinite;
-  cursor: pointer;
-  position: relative;
+  background: #fff3cd; border: 2px dashed #f0a500; border-radius: 4px;
+  padding: 0 6px; color: #7a4f00; font-weight: 600; font-style: normal;
+  display: inline-block; animation: phBlink 1.4s ease-in-out infinite; cursor: pointer;
 }
-
-.ph::before {
-  content: '✏️ ';
-  font-size: 0.75em;
-}
-
+.ph::before { content: '✏️ '; font-size: 0.75em; }
 @keyframes phBlink {
   0%, 100% { background: #fff3cd; border-color: #f0a500; opacity: 1; }
   50% { background: #ffe082; border-color: #ff8f00; opacity: 0.7; }
 }
+.ph-dark { background: rgba(255,220,80,0.18); border-color: rgba(255,180,0,0.6); color: #ffe082; }
 
-.ph-dark {
-  background: rgba(255,220,80,0.18);
-  border-color: rgba(255,180,0,0.6);
-  color: #ffe082;
-}
-
-/* ===== NAV ===== */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(45, 82, 69, 0.97);
-  backdrop-filter: blur(14px);
+  background: rgba(45,82,69,0.97); backdrop-filter: blur(14px);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6%;
-  height: 66px;
+  padding: 0 6%; height: 66px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  color: #c8e6d4;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-}
-
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: #c8e6d4; text-decoration: none; }
 .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-.nav-links a {
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  transition: color 0.2s;
-}
+.nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
 .nav-links a:hover { color: #c8e6d4; }
-
-.nav-cta {
-  background: var(--clay) !important;
-  color: white !important;
-  padding: 9px 22px;
-  border-radius: 50px;
-  font-weight: 600 !important;
-  font-size: 13px !important;
-  transition: background 0.2s !important;
-}
+.nav-cta { background: var(--clay) !important; color: white !important; padding: 9px 22px; border-radius: 50px; font-weight: 600 !important; font-size: 13px !important; }
 .nav-cta:hover { background: var(--clay-light) !important; }
 
-/* ===== HERO ===== */
 .hero {
-  min-height: 100vh;
-  background: var(--sage-dark);
+  min-height: 100vh; background: var(--sage-dark);
   padding: 100px 6% 80px;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 60px;
-  position: relative;
-  overflow: hidden;
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  align-items: center; gap: 60px;
+  position: relative; overflow: hidden;
 }
-
-.hero-bg-circle {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.04);
-}
-
+.hero-bg-circle { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.04); }
 .c1 { width: 600px; height: 600px; top: -150px; right: -150px; }
 .c2 { width: 400px; height: 400px; bottom: -100px; right: 100px; border-color: rgba(255,255,255,0.03); }
 .c3 { width: 200px; height: 200px; top: 30%; left: -50px; }
-
 .hero-content { position: relative; z-index: 2; }
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 50px;
-  padding: 7px 18px;
-  font-size: 13px;
-  color: #a8d5b8;
-  margin-bottom: 32px;
-  letter-spacing: 0.5px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px; padding: 7px 18px; font-size: 13px; color: #c8e6d4;
+  margin-bottom: 32px; letter-spacing: 0.5px;
 }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #6ee7a0; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
 
-.badge-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: #6ee7a0;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(38px, 4.5vw, 60px);
-  color: var(--white);
-  line-height: 1.15;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px,4.5vw,60px); color: var(--white); line-height: 1.15; font-weight: 500; margin-bottom: 20px; }
 .hero h1 em { color: #a8d5b8; font-style: italic; }
-
-.hero-role {
-  font-size: 15px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  font-weight: 300;
-}
-
-.hero-desc {
-  font-size: 16px;
-  color: rgba(255,255,255,0.65);
-  max-width: 480px;
-  line-height: 1.85;
-  margin-bottom: 44px;
-}
-
+.hero-role { font-size: 15px; color: rgba(255,255,255,0.55); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; font-weight: 300; }
+.hero-desc { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 480px; line-height: 1.85; margin-bottom: 44px; }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .btn-primary {
-  background: var(--clay);
-  color: white;
-  padding: 14px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  transition: background 0.2s, transform 0.15s;
-  display: inline-block;
+  background: var(--clay); color: white; padding: 14px 30px; border-radius: 50px;
+  text-decoration: none; font-weight: 600; font-size: 15px;
+  transition: background 0.2s, transform 0.15s; display: inline-block;
   border: none; cursor: pointer; font-family: 'Nunito', sans-serif;
 }
 .btn-primary:hover { background: var(--clay-light); transform: translateY(-2px); }
 
-.btn-outline-light {
-  border: 1.5px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.75);
-  padding: 14px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 15px;
-  transition: border-color 0.2s, color 0.2s;
-  display: inline-block;
-}
-.btn-outline-light:hover { border-color: #a8d5b8; color: #a8d5b8; }
-
-/* HERO CARD */
 .hero-card-wrap { position: relative; z-index: 2; }
-
 .hero-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  padding: 36px;
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 36px; backdrop-filter: blur(10px);
 }
-
 .doctor-avatar {
   width: 100px; height: 100px; border-radius: 50%;
-  background: rgba(168,213,184,0.15);
-  border: 2px dashed rgba(168,213,184,0.3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 42px;
-  margin: 0 auto 20px;
+  background: rgba(168,213,184,0.15); border: 2px dashed rgba(168,213,184,0.3);
+  display: flex; align-items: center; justify-content: center; font-size: 42px; margin: 0 auto 20px;
 }
-
-.hero-card h3 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-
-.hero-card .card-role {
-  text-align: center;
-  font-size: 13px;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 24px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
+.hero-card h3 { text-align: center; font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; }
+.hero-card .card-role { text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase; }
 .hero-card-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 0 0 24px; }
 
-.consult-modes { display: flex; flex-direction: column; gap: 14px; }
-
-.mode-item {
-  display: flex; align-items: center; gap: 14px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 14px 18px;
-  transition: background 0.2s;
+.info-row {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 12px 16px; margin-bottom: 12px;
 }
-.mode-item:hover { background: rgba(255,255,255,0.08); }
+.info-row .info-icon { font-size: 18px; flex-shrink: 0; }
+.info-row .info-text { font-size: 13px; color: rgba(255,255,255,0.7); }
+.info-row .info-text strong { color: var(--white); display: block; font-size: 14px; margin-bottom: 1px; }
 
-.mode-icon {
-  width: 42px; height: 42px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; flex-shrink: 0;
-}
+.hero-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; margin-top: 8px; }
+.hero-stat { background: rgba(255,255,255,0.04); padding: 14px; text-align: center; }
+.hero-stat .num { font-family: 'Playfair Display', serif; font-size: 20px; color: #a8d5b8; font-weight: 700; display: block; }
+.hero-stat .lbl { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; }
 
-.mode-icon.online { background: rgba(110,231,160,0.12); }
-.mode-icon.offline { background: rgba(196,133,90,0.15); }
-
-.mode-text .mode-title { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
-.mode-text .mode-sub { font-size: 12px; color: rgba(255,255,255,0.4); }
-
-.mode-badge {
-  margin-left: auto;
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 50px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-.badge-primary-mode { background: rgba(110,231,160,0.15); color: #6ee7a0; }
-.badge-secondary-mode { background: rgba(196,133,90,0.15); color: #e8a882; }
-
-.hero-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: rgba(255,255,255,0.08);
-  border-radius: 12px; overflow: hidden; margin-top: 20px;
-}
-
-.hero-stat {
-  background: rgba(255,255,255,0.04);
-  padding: 14px;
-  text-align: center;
-}
-
-.hero-stat .num {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px; color: #a8d5b8; font-weight: 700; display: block;
-}
-.hero-stat .lbl { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; }
-
-/* ===== SECTIONS ===== */
 section { padding: 96px 6%; }
+.section-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; display: block; font-weight: 600; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(30px,3.5vw,44px); font-weight: 500; line-height: 1.2; color: var(--sage-dark); margin-bottom: 20px; }
 
-.section-eyebrow {
-  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--sage); margin-bottom: 14px; display: block; font-weight: 600;
-}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.about-text p { font-size: 16px; color: var(--text-muted); line-height: 1.9; margin-bottom: 18px; }
 
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(30px, 3.5vw, 44px);
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--sage-dark);
-  margin-bottom: 20px;
-}
-
-/* ===== ABOUT ===== */
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
-}
-
-.about-text p {
-  font-size: 16px; color: var(--text-muted); line-height: 1.9; margin-bottom: 18px;
-}
-
-.quals {
-  margin-top: 32px;
-  display: flex; flex-direction: column; gap: 12px;
-}
-
+.quals { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
 .qual-item {
-  display: flex; align-items: flex-start; gap: 14px;
-  padding: 14px 18px;
-  background: var(--white);
-  border-radius: 10px;
-  border: 1px solid var(--warm-darker);
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px; background: var(--white);
+  border-radius: 10px; border: 1px solid var(--warm-darker);
 }
+.qual-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+.qual-item .deg { font-size: 15px; font-weight: 600; color: var(--text); }
+.qual-item .field { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
 
-.qual-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--sage); margin-top: 5px; flex-shrink: 0;
-}
-
-.qual-item .yr { font-size: 12px; color: var(--sage); font-weight: 600; letter-spacing: 1px; }
-.qual-item .deg { font-size: 15px; font-weight: 600; color: var(--text); margin: 2px 0; }
-.qual-item .inst { font-size: 13px; color: var(--text-muted); }
-
-/* HOURS CARD */
-.hours-card {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 36px;
-  border: 1px solid var(--warm-darker);
-}
-
-.hours-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px; color: var(--sage-dark); margin-bottom: 22px;
-}
-
-.hours-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--warm-dark);
-  font-size: 14px;
-}
-
+.hours-card { background: var(--white); border-radius: 16px; padding: 36px; border: 1px solid var(--warm-darker); }
+.hours-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--sage-dark); margin-bottom: 22px; }
+.hours-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--warm-dark); font-size: 14px; }
 .hours-row:last-child { border-bottom: none; }
 .hours-row .day { font-weight: 600; color: var(--text); }
 .hours-row .time { color: var(--text-muted); }
 .hours-row .closed { color: #d9534f; font-weight: 600; }
+.hours-note { margin-top: 22px; background: var(--sage-pale); border-left: 3px solid var(--sage); border-radius: 0 8px 8px 0; padding: 14px 18px; font-size: 13px; color: var(--sage-dark); line-height: 1.6; }
 
-.hours-note {
-  margin-top: 22px;
-  background: var(--sage-pale);
-  border-left: 3px solid var(--sage);
-  border-radius: 0 8px 8px 0;
-  padding: 14px 18px;
-  font-size: 13px;
-  color: var(--sage-dark);
-  line-height: 1.6;
-}
-
-/* ===== SPECIALTIES ===== */
+/* SPECIALTIES — fixed text colors on dark green bg */
 .specialties-section { background: var(--sage-dark); }
-.specialties-section .section-eyebrow { color: #a8d5b8; }
+.specialties-section .section-eyebrow { color: rgba(255,255,255,0.6); }
 .specialties-section .section-title { color: var(--white); }
-.specialties-section .section-subtitle { color: rgba(255,255,255,0.5); max-width: 540px; font-size: 15px; line-height: 1.75; margin-bottom: 52px; }
+.specialties-section .section-subtitle { color: rgba(255,255,255,0.75); max-width: 540px; font-size: 15px; line-height: 1.75; margin-bottom: 52px; }
 
-.spec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
+.spec-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 28px 26px; transition: background 0.25s, transform 0.2s; }
+.spec-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-4px); }
+.spec-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; background: rgba(255,255,255,0.08); }
+.spec-card h3 { font-size: 16px; font-weight: 600; color: #ffffff; margin-bottom: 8px; }
+.spec-card p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.7; }
 
-.spec-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 28px 26px;
-  transition: background 0.25s, border-color 0.25s, transform 0.2s;
-}
-
-.spec-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(168,213,184,0.25);
-  transform: translateY(-4px);
-}
-
-.spec-icon {
-  width: 52px; height: 52px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px; margin-bottom: 18px;
-  background: rgba(168,213,184,0.1);
-}
-
-.spec-card h3 { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
-.spec-card p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; }
-
-/* ===== CONSULTATION ===== */
+/* CONSULTATION */
 .consult-section { background: var(--warm); }
-
-.consult-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 52px;
+.online-consult-card {
+  max-width: 720px; margin: 52px auto 0;
+  background: var(--sage-dark); border-radius: 20px; padding: 52px 56px;
+  border: 1px solid rgba(168,213,184,0.15); position: relative; overflow: hidden;
 }
+.online-consult-card::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.04); }
+.primary-tag { display: inline-block; background: rgba(110,231,160,0.15); color: #6ee7a0; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 50px; margin-bottom: 20px; }
+.online-consult-card h3 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 500; color: var(--white); margin-bottom: 12px; }
+.online-consult-card > p { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.65); margin-bottom: 32px; max-width: 500px; }
+.consult-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; }
+.consult-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.85); }
+.feat-check { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; font-weight: 700; background: rgba(110,231,160,0.15); color: #6ee7a0; }
+.consult-btn { display: inline-block; padding: 14px 32px; border-radius: 50px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; font-family: 'Nunito', sans-serif; background: var(--clay); color: white; transition: transform 0.15s, background 0.2s; }
+.consult-btn:hover { transform: translateY(-2px); background: var(--clay-light); }
 
-/* ONLINE CARD */
-.consult-card {
-  border-radius: 18px;
-  padding: 40px 36px;
-  position: relative; overflow: hidden;
-}
-
-.consult-card.online {
-  background: var(--sage-dark);
-  border: 1px solid rgba(168,213,184,0.15);
-}
-
-.consult-card.offline {
-  background: var(--white);
-  border: 1.5px solid var(--warm-darker);
-}
-
-.primary-tag {
-  display: inline-block;
-  background: rgba(110,231,160,0.15);
-  color: #6ee7a0;
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 50px;
-  margin-bottom: 20px;
-}
-
-.secondary-tag {
-  display: inline-block;
-  background: rgba(196,133,90,0.1);
-  color: var(--clay);
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 50px;
-  margin-bottom: 20px;
-}
-
-.consult-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px; font-weight: 500; margin-bottom: 12px;
-}
-
-.consult-card.online h3 { color: var(--white); }
-.consult-card.offline h3 { color: var(--sage-dark); }
-
-.consult-card p {
-  font-size: 14px; line-height: 1.75; margin-bottom: 28px;
-}
-.consult-card.online p { color: rgba(255,255,255,0.55); }
-.consult-card.offline p { color: var(--text-muted); }
-
-.consult-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-
-.consult-features li {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 14px;
-}
-
-.consult-card.online .consult-features li { color: rgba(255,255,255,0.7); }
-.consult-card.offline .consult-features li { color: var(--text-muted); }
-
-.feat-check {
-  width: 20px; height: 20px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; flex-shrink: 0; font-weight: 700;
-}
-
-.consult-card.online .feat-check { background: rgba(110,231,160,0.15); color: #6ee7a0; }
-.consult-card.offline .feat-check { background: rgba(196,133,90,0.12); color: var(--clay); }
-
-.consult-btn {
-  display: inline-block;
-  padding: 13px 28px;
-  border-radius: 50px;
-  font-size: 14px; font-weight: 600;
-  cursor: pointer; border: none;
-  font-family: 'Nunito', sans-serif;
-  transition: transform 0.15s, opacity 0.2s;
-  text-decoration: none;
-}
-.consult-btn:hover { transform: translateY(-2px); opacity: 0.9; }
-.consult-card.online .consult-btn { background: var(--clay); color: white; }
-.consult-card.offline .consult-btn { background: var(--sage-dark); color: white; }
-
-/* OFFLINE LOCATIONS */
-.locations-wrap { margin-top: 16px; }
-
-.location-item {
-  display: flex; align-items: flex-start; gap: 14px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--warm-dark);
-}
+.offline-note { max-width: 720px; margin: 24px auto 0; background: var(--white); border-radius: 16px; padding: 32px 40px; border: 1.5px solid var(--warm-darker); }
+.offline-note h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--sage-dark); margin-bottom: 6px; }
+.offline-note .offline-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 22px; }
+.location-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--warm-dark); }
 .location-item:last-child { border-bottom: none; }
-
-.loc-icon {
-  width: 38px; height: 38px; border-radius: 9px;
-  background: var(--sage-pale);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 17px; flex-shrink: 0; margin-top: 2px;
-}
-
+.loc-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--sage-pale); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; margin-top: 2px; }
 .loc-text .loc-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
 .loc-text .loc-addr { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
-.loc-text .loc-days { font-size: 12px; color: var(--sage); font-weight: 600; letter-spacing: 0.3px; }
+.loc-text .loc-days { font-size: 12px; color: var(--sage); font-weight: 600; }
 
-/* ===== BOOKING SECTION ===== */
-.booking-section {
-  background: var(--sage-pale);
-  text-align: center;
-}
-
+.booking-section { background: var(--sage-pale); text-align: center; }
 .booking-section .section-title { margin: 0 auto 12px; max-width: 500px; }
 .booking-section .section-sub { font-size: 15px; color: var(--text-muted); max-width: 480px; margin: 0 auto 44px; line-height: 1.75; }
-
-.book-btn {
-  background: var(--sage-dark);
-  color: white;
-  border: none;
-  padding: 16px 44px;
-  font-size: 16px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-  letter-spacing: 0.3px;
-}
+.book-btn { background: var(--sage-dark); color: white; border: none; padding: 16px 44px; font-size: 16px; font-family: 'Nunito', sans-serif; font-weight: 600; border-radius: 50px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
 .book-btn:hover { background: var(--sage); transform: translateY(-2px); }
 
-/* ===== MODAL ===== */
-.modal-overlay {
-  display: none; position: fixed; inset: 0; z-index: 999;
-  background: rgba(20,40,30,0.7);
-  backdrop-filter: blur(8px);
-  align-items: center; justify-content: center; padding: 20px;
-}
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(20,40,30,0.7); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; }
 .modal-overlay.open { display: flex; }
-
-.modal {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 48px 44px;
-  max-width: 500px; width: 100%;
-  position: relative;
-  animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.modal-close {
-  position: absolute; top: 18px; right: 20px;
-  background: none; border: none; font-size: 22px;
-  color: var(--text-muted); cursor: pointer; transition: color 0.2s;
-}
-.modal-close:hover { color: var(--text); }
-
-.modal-type-toggle {
-  display: flex; background: var(--warm-dark); border-radius: 50px;
-  padding: 4px; margin-bottom: 28px; gap: 4px;
-}
-
-.toggle-btn {
-  flex: 1; padding: 9px; border-radius: 50px;
-  border: none; background: none;
-  font-family: 'Nunito', sans-serif;
-  font-size: 14px; font-weight: 600;
-  cursor: pointer; transition: background 0.2s, color 0.2s;
-  color: var(--text-muted);
-}
-.toggle-btn.active { background: var(--sage-dark); color: white; }
-
+.modal { background: var(--white); border-radius: 20px; padding: 48px 44px; max-width: 500px; width: 100%; position: relative; animation: slideUp 0.3s ease; }
+@keyframes slideUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+.modal-close { position: absolute; top: 18px; right: 20px; background: none; border: none; font-size: 22px; color: var(--text-muted); cursor: pointer; }
 .modal-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 8px; }
-
-.modal h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px; font-weight: 500; color: var(--sage-dark); margin-bottom: 6px;
-}
+.modal h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 500; color: var(--sage-dark); margin-bottom: 6px; }
 .modal .modal-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
-
 .form-group { margin-bottom: 18px; }
 .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 7px; }
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%; padding: 12px 16px;
-  border: 1.5px solid var(--warm-darker);
-  border-radius: 10px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 15px; color: var(--text);
-  background: var(--warm);
-  transition: border-color 0.2s; outline: none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus { border-color: var(--sage); }
-
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; border: 1.5px solid var(--warm-darker); border-radius: 10px; font-family: 'Nunito', sans-serif; font-size: 15px; color: var(--text); background: var(--warm); transition: border-color 0.2s; outline: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sage); }
 .form-group textarea { resize: vertical; min-height: 80px; }
-
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-.submit-btn {
-  width: 100%; background: var(--sage-dark); color: white;
-  border: none; padding: 14px;
-  border-radius: 50px;
-  font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 600;
-  cursor: pointer; margin-top: 6px;
-  transition: background 0.2s;
-}
+.submit-btn { width: 100%; background: var(--sage-dark); color: white; border: none; padding: 14px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 600; cursor: pointer; margin-top: 6px; transition: background 0.2s; }
 .submit-btn:hover { background: var(--sage); }
-
 .success-msg { display: none; text-align: center; padding: 20px 0; }
 .success-icon { width: 66px; height: 66px; border-radius: 50%; background: var(--sage-pale); display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 18px; }
 .success-msg h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--sage-dark); margin-bottom: 8px; }
 .success-msg p { font-size: 14px; color: var(--text-muted); }
 
-/* ===== CONTACT ===== */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-
 .contact-detail { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
-
-.contact-icon {
-  width: 42px; height: 42px; border-radius: 10px;
-  background: var(--sage-pale);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; flex-shrink: 0;
-}
-
+.contact-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--sage-pale); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
 .contact-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 3px; }
 .contact-value { font-size: 15px; color: var(--text); }
+.map-box { height: 300px; border-radius: 16px; background: var(--warm-dark); border: 1.5px solid var(--warm-darker); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--text-muted); font-size: 14px; }
 
-.map-box {
-  height: 300px; border-radius: 16px;
-  background: var(--warm-dark);
-  border: 1.5px solid var(--warm-darker);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 8px; color: var(--text-muted); font-size: 14px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: var(--sage-dark);
-  padding: 40px 6%;
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-}
-
+footer { background: var(--sage-dark); padding: 40px 6%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: #a8d5b8; }
-.footer-tagline { font-size: 13px; color: rgba(255,255,255,0.3); }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero { grid-template-columns: 1fr; padding-top: 90px; }
   .hero-card-wrap { display: none; }
-  .about-grid, .contact-grid, .consult-grid { grid-template-columns: 1fr; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .modal { padding: 32px 22px; }
   .form-row { grid-template-columns: 1fr; }
+  .online-consult-card { padding: 36px 28px; }
+  .offline-note { padding: 28px 24px; }
+  .consult-features { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Dr. <span class="ph ph-dark">YOUR NAME</span></a>
+  <a href="#" class="nav-logo">Dr. Shafeeq Ahammed</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#specialties">Specialties</a></li>
@@ -704,257 +246,145 @@ footer {
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg-circle c1"></div>
   <div class="hero-bg-circle c2"></div>
   <div class="hero-bg-circle c3"></div>
-
   <div class="hero-content">
-    <div class="hero-badge">
-      <div class="badge-dot"></div>
-      Available for Online Consultation
-    </div>
-    <div class="hero-role">Psychiatrist &nbsp;·&nbsp; <span class="ph ph-dark">MBBS, MD, DPM</span></div>
+    <div class="hero-badge"><div class="badge-dot"></div>Available for Online Consultation</div>
+    <div class="hero-role">Psychiatrist &nbsp;·&nbsp; MBBS, MD</div>
     <h1>A Safe Space<br>for Your <em>Mental Health</em></h1>
-    <p class="hero-desc">Compassionate, confidential psychiatric care — wherever you are. Consult from the comfort of your home or visit us in person.</p>
+    <p class="hero-desc">Compassionate, confidential psychiatric care — wherever you are. Consult from the comfort of your home through a secure online session.</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="openModal('online')">🎥 &nbsp; Book Online Consult</button>
-      <a href="#consult" class="btn-outline-light">Find Clinic Locations</a>
+      <button class="btn-primary" onclick="document.getElementById('apptModal').classList.add('open')">🎥 &nbsp; Book Online Consult</button>
     </div>
   </div>
-
   <div class="hero-card-wrap">
     <div class="hero-card">
       <div class="doctor-avatar">🧠</div>
-      <h3>Dr. <span class="ph ph-dark">YOUR NAME</span></h3>
-      <p class="card-role">Consultant Psychiatrist</p>
+      <h3>Dr. Shafeeq Ahammed</h3>
+      <p class="card-role">Consultant Psychiatrist · MBBS, MD</p>
       <div class="hero-card-divider"></div>
-      <div class="consult-modes">
-        <div class="mode-item">
-          <div class="mode-icon online">🎥</div>
-          <div class="mode-text">
-            <div class="mode-title">Online Consultation</div>
-            <div class="mode-sub">Video · Audio · Chat</div>
-          </div>
-          <span class="mode-badge badge-primary-mode">Primary</span>
-        </div>
-        <div class="mode-item">
-          <div class="mode-icon offline">🏥</div>
-          <div class="mode-text">
-            <div class="mode-title">In-Person Visit</div>
-            <div class="mode-sub"><span class="ph ph-dark">CITY / CLINIC</span></div>
-          </div>
-          <span class="mode-badge badge-secondary-mode">Available</span>
-        </div>
-      </div>
+      <div class="info-row"><span class="info-icon">🎥</span><div class="info-text"><strong>Online Consultation</strong>Video · Audio · Chat — pan India</div></div>
+      <div class="info-row"><span class="info-icon">🔒</span><div class="info-text"><strong>100% Confidential</strong>All sessions fully private</div></div>
+      <div class="info-row"><span class="info-icon">📋</span><div class="info-text"><strong>Digital Prescriptions</strong>Issued after every session</div></div>
       <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="num"><span class="ph ph-dark">10+</span></span>
-          <span class="lbl">Yrs exp.</span>
-        </div>
-        <div class="hero-stat">
-          <span class="num"><span class="ph ph-dark">1k+</span></span>
-          <span class="lbl">Patients</span>
-        </div>
-        <div class="hero-stat">
-          <span class="num">100%</span>
-          <span class="lbl">Private</span>
-        </div>
+        <div class="hero-stat"><span class="num">100%</span><span class="lbl">Confidential</span></div>
+        <div class="hero-stat"><span class="num">Pan India</span><span class="lbl">Available</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
     <div class="about-text">
       <span class="section-eyebrow">About Me</span>
       <h2 class="section-title">Healing Minds with Empathy & Science</h2>
-      <p>I am Dr. <span class="ph">YOUR FULL NAME</span>, a Consultant Psychiatrist with <span class="ph">X</span> years of experience in diagnosing and treating a wide range of mental health conditions. My approach is grounded in evidence-based medicine and deep empathy.</p>
-      <p>I believe mental health care should be accessible to everyone — which is why I offer both online and in-person consultations. Every patient's journey is unique, and I'm here to walk it with you.</p>
+      <p>I am Dr. Shafeeq Ahammed, a Consultant Psychiatrist dedicated to providing compassionate, evidence-based mental health care. My approach is rooted in deep listening and personalised treatment — because every person's journey is unique.</p>
+      <p>I believe mental health care should be accessible to everyone, which is why I offer online consultations so you can get the help you need from the comfort and privacy of your own home.</p>
       <div class="quals">
         <div class="qual-item">
           <div class="qual-dot"></div>
-          <div>
-            <div class="yr"><span class="ph">YEAR</span></div>
-            <div class="deg">MBBS</div>
-            <div class="inst"><span class="ph">YOUR MEDICAL COLLEGE</span></div>
-          </div>
+          <div><div class="deg">MBBS</div><div class="field">Bachelor of Medicine & Surgery</div></div>
         </div>
         <div class="qual-item">
           <div class="qual-dot"></div>
-          <div>
-            <div class="yr"><span class="ph">YEAR</span></div>
-            <div class="deg">MD — Psychiatry</div>
-            <div class="inst"><span class="ph">YOUR POSTGRAD COLLEGE</span></div>
-          </div>
-        </div>
-        <div class="qual-item">
-          <div class="qual-dot"></div>
-          <div>
-            <div class="yr"><span class="ph">YEAR</span></div>
-            <div class="deg"><span class="ph">ANY EXTRA CERTIFICATION</span></div>
-            <div class="inst"><span class="ph">INSTITUTE NAME</span></div>
-          </div>
+          <div><div class="deg">MD — Psychiatry</div><div class="field">Doctor of Medicine in Psychiatry</div></div>
         </div>
       </div>
     </div>
-
     <div class="hours-card">
       <h3>Availability</h3>
       <div class="hours-row"><span class="day">Monday – Friday</span><span class="time ph">9:00 AM – 6:00 PM</span></div>
       <div class="hours-row"><span class="day">Saturday</span><span class="time ph">9:00 AM – 1:00 PM</span></div>
       <div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div>
-      <div class="hours-note">
-        🎥 Online consultations available across all time slots. In-person visits at select clinic locations — see below.
-      </div>
-
+      <div class="hours-note">🎥 Online consultations available across all time slots. Book your session and we'll confirm your preferred time.</div>
       <div style="margin-top: 28px;">
-        <p style="font-size: 13px; font-weight: 700; color: var(--sage-dark); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px;">Languages</p>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span style="background: var(--sage-pale); color: var(--sage-dark); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 600;">English</span>
-          <span style="background: var(--sage-pale); color: var(--sage-dark); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 600;">Malayalam</span>
-          <span class="ph" style="border-radius: 50px; font-size: 13px;">ADD LANGUAGE</span>
+        <p style="font-size:13px; font-weight:700; color:var(--sage-dark); letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">Languages</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <span style="background:var(--sage-pale); color:var(--sage-dark); padding:6px 16px; border-radius:50px; font-size:13px; font-weight:600;">English</span>
+          <span style="background:var(--sage-pale); color:var(--sage-dark); padding:6px 16px; border-radius:50px; font-size:13px; font-weight:600;">Malayalam</span>
+          <span class="ph" style="border-radius:50px; font-size:13px;">ADD LANGUAGE</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SPECIALTIES -->
 <section id="specialties" class="specialties-section">
   <span class="section-eyebrow">What I Treat</span>
   <h2 class="section-title">Areas of Expertise</h2>
-  <p class="section-subtitle">Mental health challenges are deeply personal. I provide thoughtful, individualized care for a range of psychiatric conditions.</p>
+  <p class="section-subtitle">Mental health challenges are deeply personal. I provide thoughtful, individualised care for a range of psychiatric conditions.</p>
   <div class="spec-grid">
-    <div class="spec-card">
-      <div class="spec-icon">😔</div>
-      <h3>Depression & Mood Disorders</h3>
-      <p>Comprehensive evaluation and treatment of depression, bipolar disorder, and other mood-related conditions.</p>
-    </div>
-    <div class="spec-card">
-      <div class="spec-icon">😰</div>
-      <h3>Anxiety & Panic Disorders</h3>
-      <p>Generalized anxiety, panic attacks, social anxiety, phobias, and OCD — tailored therapy and medication management.</p>
-    </div>
-    <div class="spec-card">
-      <div class="spec-icon">😴</div>
-      <h3>Sleep Disorders</h3>
-      <p>Insomnia, hypersomnia, and sleep disturbances linked to stress, anxiety, or other underlying conditions.</p>
-    </div>
-    <div class="spec-card">
-      <div class="spec-icon">🧩</div>
-      <h3>ADHD & Developmental</h3>
-      <p>Assessment and management of ADHD in adults and children, along with developmental and behavioral challenges.</p>
-    </div>
-    <div class="spec-card">
-      <div class="spec-icon">💊</div>
-      <h3>Addiction Psychiatry</h3>
-      <p>Support and treatment for substance use disorders, de-addiction counseling, and relapse prevention.</p>
-    </div>
-    <div class="spec-card">
-      <div class="spec-icon">🫂</div>
-      <h3>Trauma & PTSD</h3>
-      <p>Healing from past trauma, PTSD, and grief through evidence-based therapeutic approaches and medication.</p>
-    </div>
+    <div class="spec-card"><div class="spec-icon">😔</div><h3>Depression & Mood Disorders</h3><p>Comprehensive evaluation and treatment of depression, bipolar disorder, and other mood-related conditions.</p></div>
+    <div class="spec-card"><div class="spec-icon">😰</div><h3>Anxiety & Panic Disorders</h3><p>Generalised anxiety, panic attacks, social anxiety, phobias, and OCD — tailored therapy and medication management.</p></div>
+    <div class="spec-card"><div class="spec-icon">😴</div><h3>Sleep Disorders</h3><p>Insomnia, hypersomnia, and sleep disturbances linked to stress, anxiety, or other underlying conditions.</p></div>
+    <div class="spec-card"><div class="spec-icon">🧩</div><h3>ADHD & Developmental</h3><p>Assessment and management of ADHD in adults and children, along with developmental and behavioural challenges.</p></div>
+    <div class="spec-card"><div class="spec-icon">💊</div><h3>Addiction Psychiatry</h3><p>Support and treatment for substance use disorders, de-addiction counselling, and relapse prevention.</p></div>
+    <div class="spec-card"><div class="spec-icon">🫂</div><h3>Trauma & PTSD</h3><p>Healing from past trauma, PTSD, and grief through evidence-based therapeutic approaches and medication.</p></div>
   </div>
 </section>
 
-<!-- CONSULTATION OPTIONS -->
 <section id="consult" class="consult-section">
-  <span class="section-eyebrow">How to See Me</span>
-  <h2 class="section-title">Choose Your Consultation Type</h2>
-  <div class="consult-grid">
-
-    <!-- ONLINE -->
-    <div class="consult-card online">
-      <span class="primary-tag">⭐ Recommended</span>
-      <h3>Online Consultation</h3>
-      <p>Talk to me from wherever you are — your home, your office, anywhere. Fully private and secure.</p>
-      <ul class="consult-features">
-        <li><span class="feat-check">✓</span> Video, audio, or chat session</li>
-        <li><span class="feat-check">✓</span> Available pan-India</li>
-        <li><span class="feat-check">✓</span> Digital prescriptions issued</li>
-        <li><span class="feat-check">✓</span> No travel, no waiting room</li>
-        <li><span class="feat-check">✓</span> Completely confidential</li>
-      </ul>
-      <button class="consult-btn" onclick="openModal('online')">Book Online Session →</button>
-    </div>
-
-    <!-- OFFLINE -->
-    <div class="consult-card offline">
-      <span class="secondary-tag">🏥 In-Person</span>
-      <h3>Visit the Clinic</h3>
-      <p>Prefer to meet in person? I'm available at the following clinics on specific days of the week.</p>
-      <div class="locations-wrap">
-        <div class="location-item">
-          <div class="loc-icon">📍</div>
-          <div class="loc-text">
-            <div class="loc-name"><span class="ph">CLINIC NAME 1</span></div>
-            <div class="loc-addr"><span class="ph">FULL ADDRESS, CITY</span></div>
-            <div class="loc-days">📅 <span class="ph">MON, WED, FRI</span> &nbsp;·&nbsp; <span class="ph">10AM – 2PM</span></div>
-          </div>
-        </div>
-        <div class="location-item">
-          <div class="loc-icon">📍</div>
-          <div class="loc-text">
-            <div class="loc-name"><span class="ph">CLINIC NAME 2</span></div>
-            <div class="loc-addr"><span class="ph">FULL ADDRESS, CITY</span></div>
-            <div class="loc-days">📅 <span class="ph">TUE, THU, SAT</span> &nbsp;·&nbsp; <span class="ph">3PM – 7PM</span></div>
-          </div>
-        </div>
+  <div style="text-align:center;">
+    <span class="section-eyebrow">How to See Me</span>
+    <h2 class="section-title">Online Consultation</h2>
+  </div>
+  <div class="online-consult-card">
+    <span class="primary-tag">🎥 Primary Mode</span>
+    <h3>Consult from Anywhere</h3>
+    <p>Talk to me from wherever you are — your home, your office, anywhere across India. Fully private, fully secure.</p>
+    <ul class="consult-features">
+      <li><span class="feat-check">✓</span> Video, audio, or chat session</li>
+      <li><span class="feat-check">✓</span> Available pan-India</li>
+      <li><span class="feat-check">✓</span> Digital prescriptions issued</li>
+      <li><span class="feat-check">✓</span> No travel, no waiting room</li>
+      <li><span class="feat-check">✓</span> Completely confidential</li>
+      <li><span class="feat-check">✓</span> Follow-up sessions available</li>
+    </ul>
+    <button class="consult-btn" onclick="document.getElementById('apptModal').classList.add('open')">Book Your Session →</button>
+  </div>
+  <div class="offline-note">
+    <h4>🏥 Also Available In-Person</h4>
+    <p class="offline-sub">Prefer to visit in person? Dr. Shafeeq Ahammed is also available at the following clinic locations.</p>
+    <div class="location-item">
+      <div class="loc-icon">📍</div>
+      <div class="loc-text">
+        <div class="loc-name"><span class="ph">CLINIC NAME 1</span></div>
+        <div class="loc-addr"><span class="ph">FULL ADDRESS, CITY</span></div>
+        <div class="loc-days">📅 <span class="ph">MON, WED, FRI</span> &nbsp;·&nbsp; <span class="ph">10AM – 2PM</span></div>
       </div>
-      <button class="consult-btn" onclick="openModal('offline')" style="margin-top: 20px;">Book In-Person Visit →</button>
     </div>
-
+    <div class="location-item">
+      <div class="loc-icon">📍</div>
+      <div class="loc-text">
+        <div class="loc-name"><span class="ph">CLINIC NAME 2</span></div>
+        <div class="loc-addr"><span class="ph">FULL ADDRESS, CITY</span></div>
+        <div class="loc-days">📅 <span class="ph">TUE, THU, SAT</span> &nbsp;·&nbsp; <span class="ph">3PM – 7PM</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- BOOKING CTA -->
 <section id="booking" class="booking-section">
   <span class="section-eyebrow">Ready to Begin?</span>
   <h2 class="section-title">Book Your Appointment</h2>
-  <p class="section-sub">Leave your name and number and we will reach out to confirm your session. Online or in-person — your choice.</p>
-  <button class="book-btn" onclick="openModal('online')">📅 &nbsp; Schedule a Session</button>
+  <p class="section-sub">Leave your name and number and we will reach out to confirm your online session. Simple, quick, and confidential.</p>
+  <button class="book-btn" onclick="document.getElementById('apptModal').classList.add('open')">📅 &nbsp; Schedule a Session</button>
 </section>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="apptModal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-
     <div id="apptForm">
-      <div class="modal-type-toggle">
-        <button class="toggle-btn active" id="toggleOnline" onclick="switchType('online')">🎥 &nbsp; Online</button>
-        <button class="toggle-btn" id="toggleOffline" onclick="switchType('offline')">🏥 &nbsp; In-Person</button>
-      </div>
-
-      <span class="modal-eyebrow" id="modalEyebrow">Online Consultation</span>
-      <h2 id="modalTitle">Book a Video Session</h2>
-      <p class="modal-sub" id="modalSub">We'll contact you to confirm your online slot.</p>
-
+      <span class="modal-eyebrow">Online Consultation</span>
+      <h2>Book a Session</h2>
+      <p class="modal-sub">We'll contact you to confirm your online appointment slot.</p>
       <div class="form-row">
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" id="patientName" placeholder="Your full name" />
-        </div>
-        <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" id="patientPhone" placeholder="+91 XXXXX XXXXX" />
-        </div>
+        <div class="form-group"><label>Full Name *</label><input type="text" id="patientName" placeholder="Your full name" /></div>
+        <div class="form-group"><label>Phone Number *</label><input type="tel" id="patientPhone" placeholder="+91 XXXXX XXXXX" /></div>
       </div>
-
-      <div class="form-group" id="locationGroup" style="display:none;">
-        <label>Preferred Clinic</label>
-        <select id="clinicSelect">
-          <option value="">Select a clinic</option>
-          <option>Clinic Name 1 — City</option>
-          <option>Clinic Name 2 — City</option>
-        </select>
-      </div>
-
       <div class="form-group">
         <label>Reason for Consultation</label>
         <select id="reason">
@@ -969,16 +399,10 @@ footer {
           <option>Other</option>
         </select>
       </div>
-
-      <div class="form-group">
-        <label>Anything you'd like me to know?</label>
-        <textarea id="notes" placeholder="Brief description of your concern (optional, kept private)..."></textarea>
-      </div>
-
+      <div class="form-group"><label>Anything you'd like me to know?</label><textarea id="notes" placeholder="Brief description of your concern (optional, kept private)..."></textarea></div>
       <button class="submit-btn" onclick="submitForm()">Confirm Request →</button>
-      <p style="text-align:center; font-size:12px; color: var(--text-muted); margin-top: 12px;">🔒 Completely confidential. Your information is never shared.</p>
+      <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-top:12px;">🔒 Completely confidential. Your information is never shared.</p>
     </div>
-
     <div class="success-msg" id="successMsg">
       <div class="success-icon">✅</div>
       <h3>Request Received!</h3>
@@ -987,93 +411,42 @@ footer {
   </div>
 </div>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid">
     <div>
       <span class="section-eyebrow">Get in Touch</span>
       <h2 class="section-title">Contact & Location</h2>
-      <div style="margin-top: 24px;">
-        <div class="contact-detail">
-          <div class="contact-icon">📞</div>
-          <div>
-            <div class="contact-label">Phone</div>
-            <div class="contact-value"><span class="ph">+91 XXXXX XXXXX</span></div>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value"><span class="ph">yourname@email.com</span></div>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-label">Primary Clinic</div>
-            <div class="contact-value"><span class="ph">CLINIC NAME, STREET, CITY, STATE – PINCODE</span></div>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-icon">💬</div>
-          <div>
-            <div class="contact-label">WhatsApp</div>
-            <div class="contact-value"><span class="ph">+91 XXXXX XXXXX</span></div>
-          </div>
-        </div>
+      <div style="margin-top:24px;">
+        <div class="contact-detail"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value"><span class="ph">+91 XXXXX XXXXX</span></div></div></div>
+        <div class="contact-detail"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-value"><span class="ph">yourname@email.com</span></div></div></div>
+        <div class="contact-detail"><div class="contact-icon">📍</div><div><div class="contact-label">Primary Clinic</div><div class="contact-value"><span class="ph">CLINIC NAME, STREET, CITY – PINCODE</span></div></div></div>
+        <div class="contact-detail"><div class="contact-icon">💬</div><div><div class="contact-label">WhatsApp</div><div class="contact-value"><span class="ph">+91 XXXXX XXXXX</span></div></div></div>
       </div>
     </div>
     <div class="map-box">
       <span style="font-size:36px;">🗺️</span>
-      <span style="font-weight:600; color: var(--text);">Google Maps goes here</span>
-      <span style="font-size:12px; opacity:0.5; text-align:center; max-width:200px;">Replace this box with an iframe embed from Google Maps</span>
+      <span style="font-weight:600; color:var(--text);">Google Maps goes here</span>
+      <span style="font-size:12px; opacity:0.5; text-align:center; max-width:200px;">Replace with a Google Maps iframe embed</span>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Dr. <span class="ph ph-dark">YOUR NAME</span></span>
-  <p class="footer-tagline">Psychiatric Care — Online & In-Person · <span class="ph ph-dark">CITY</span>, Kerala</p>
+  <span class="footer-logo">Dr. Shafeeq Ahammed</span>
+  <p class="footer-tagline">Psychiatrist · Online Consultation · Kerala</p>
   <p style="font-size:12px; color:rgba(255,255,255,0.2);">© 2025</p>
 </footer>
 
 <script>
-  let currentType = 'online';
-
-  function openModal(type) {
-    currentType = type;
-    switchType(type);
-    document.getElementById('apptModal').classList.add('open');
-  }
-
   function closeModal() {
     document.getElementById('apptModal').classList.remove('open');
     document.getElementById('apptForm').style.display = 'block';
     document.getElementById('successMsg').style.display = 'none';
   }
-
-  function switchType(type) {
-    currentType = type;
-    const isOnline = type === 'online';
-    document.getElementById('toggleOnline').classList.toggle('active', isOnline);
-    document.getElementById('toggleOffline').classList.toggle('active', !isOnline);
-    document.getElementById('modalEyebrow').textContent = isOnline ? 'Online Consultation' : 'In-Person Visit';
-    document.getElementById('modalTitle').textContent = isOnline ? 'Book a Video Session' : 'Book a Clinic Visit';
-    document.getElementById('modalSub').textContent = isOnline
-      ? "We'll contact you to confirm your online slot."
-      : "We'll call to confirm your in-person appointment.";
-    document.getElementById('locationGroup').style.display = isOnline ? 'none' : 'block';
-  }
-
   function submitForm() {
     const name = document.getElementById('patientName').value.trim();
     const phone = document.getElementById('patientPhone').value.trim();
-    if (!name || !phone) {
-      alert('Please enter your name and phone number.');
-      return;
-    }
+    if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
     document.getElementById('confirmedPhone').textContent = phone;
     document.getElementById('apptForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
@@ -1085,16 +458,9 @@ footer {
       document.getElementById('notes').value = '';
     }, 4500);
   }
-
-  document.getElementById('apptModal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
-
+  document.getElementById('apptModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
   document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const t = document.querySelector(this.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-    });
+    a.addEventListener('click', function(e) { const t = document.querySelector(this.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } });
   });
 </script>
 </body>
